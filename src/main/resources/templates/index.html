@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>Input your name</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/static}" th:object="${userName}">
+    <div class="form-group">
+        <label for="name">Enter Username: </label>
+        <input type="text" id="name"/>
+        <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+        <br/>
+        <input type="submit" value="Control"/>
+    </div>
+</form>
+</body>
+</html>
